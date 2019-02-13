@@ -11,7 +11,7 @@ def generate_test_arrays(file_path, num_tests, n_min, n_max):
 
     for i in range(num_tests):
         # Create the test array
-        A = list(random.uniform(-1000000, 1000000, max(n_min, n_max * random.random())).astype(int))
+        A = list(random.uniform(-1000000, 1000000, max(n_min, int(n_max * random.random()))).astype(int))
         max_diff_naive = wrong_trivial_solution(A)
         max_diff_exhaustive = exhaustive_solution(A)
         if max_diff_naive != max_diff_exhaustive:
@@ -22,12 +22,15 @@ def generate_test_arrays(file_path, num_tests, n_min, n_max):
 if __name__ == "__main__":
     test_folder = os.path.join(os.path.dirname(inspect.getfile(algo_test)), "tests")
 
-    # Generate tests with different sizes
+    # Generate tests with different sizes that do not get a correct result with the
+    # naive wrong way of solving the problem
 
-    generate_test_arrays(os.path.join(test_folder, "private_short"), 100, 2, 100)
+    generate_test_arrays(os.path.join(test_folder, "private_very_short"), 500, 2, 15)
 
-    generate_test_arrays(os.path.join(test_folder, "private_long"), 50, 1000, 10000)
-
-    generate_test_arrays(os.path.join(test_folder, "private_very_long"), 10, 10000, 100000)
+    # generate_test_arrays(os.path.join(test_folder, "private_short"), 100, 2, 100)
+    #
+    # generate_test_arrays(os.path.join(test_folder, "private_long"), 50, 1000, 10000)
+    #
+    # generate_test_arrays(os.path.join(test_folder, "private_very_long"), 10, 10000, 100000)
 
 
