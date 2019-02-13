@@ -12,7 +12,6 @@ def check_solution(testset_path):
     ko_guys = 0
     for i in range(len(A_npy)):
         A = list(A_npy[i])
-        # A = [1, -98, 73, -11, 49, -2, -68, -34, 54]
         d1 = exhaustive_solution(A)
         d2 = target_solution(A)
         if d1 != d2:
@@ -20,7 +19,6 @@ def check_solution(testset_path):
             ko_guys += 1
         else:
             ok_guys += 1
-        # exit()
     print "Test for {testset}:\n\t- OK: {ok_guys}\n\t- KO: {ko_guys}\n".format(testset=testset_path,
                                                                                ok_guys=ok_guys,
                                                                                ko_guys=ko_guys)

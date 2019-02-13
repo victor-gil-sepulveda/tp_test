@@ -3,6 +3,8 @@ import numpy
 from numpy import random
 import algo_test
 import os
+
+from algo_test.main_check_results import check_solution
 from algo_test.solutions import wrong_trivial_solution, exhaustive_solution
 
 
@@ -21,6 +23,8 @@ def generate_test_arrays(file_path, num_tests, n_min, n_max):
 
 if __name__ == "__main__":
     test_folder = os.path.join(os.path.dirname(inspect.getfile(algo_test)), "tests")
+
+    check_solution(os.path.join(test_folder, "{npy_file}.npy".format(npy_file="private_long")))
 
     # Generate tests with different sizes that do not get a correct result with the
     # naive wrong way of solving the problem
