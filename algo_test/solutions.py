@@ -45,28 +45,23 @@ def target_solution(A):
     O(n) passes
     """
     differences = []
-    # print len(A)
     max_p1 = A[0]
     max_p2 = A[-1]
     N = len(A)
     diff = [0]*(N-1)
 
     # O(n)
-    # print A
-
     for k in range(0, N-1): # 0 <= k <= N-2
-        # print "K\' =", k, "K\'\' =", N-2-k
         max_p1 = max(A[k], max_p1)
         max_p2 = max(A[N-1-k], max_p2)
-        # print "max p1", max_p1, "max p2", max_p2
         diff[k] += max_p1
         diff[N-2-k] -= max_p2 #N-N-2
-        # print "Differences", diff
 
     # O(n)
+    max_diff = abs(diff[0])
     for i in range(len(diff)):
-        diff[i] = abs(diff[i])
-        # print diff[i], abs(diff[i])
-    # print diff
+        max_diff = max(max_diff, abs(diff[i]))
+        # diff[i] = abs(diff[i])
+
     # O(n)
-    return max(diff)
+    return max_diff #max(diff)

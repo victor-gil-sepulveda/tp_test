@@ -26,12 +26,12 @@ def check_solution(testset_path):
 if __name__ == "__main__":
     test_folder = os.path.join(os.path.dirname(inspect.getfile(algo_test)), "tests")
 
-    # check_solution(os.path.join(test_folder, "{npy_file}.npy".format(npy_file="public")))
-    #
-    # check_solution(os.path.join(test_folder, "{npy_file}.npy".format(npy_file="private_very_short")))
+    check_solution(os.path.join(test_folder, "{npy_file}.npy".format(npy_file="public")))
 
-    # check_solution(os.path.join(test_folder, "{npy_file}.npy".format(npy_file="private_short")))
-    #
-    # check_solution(os.path.join(test_folder, "{npy_file}.npy".format(npy_file="private_long")))
-    #
+    check_solution(os.path.join(test_folder, "{npy_file}.npy".format(npy_file="private_very_short")))
+
+    check_solution(os.path.join(test_folder, "{npy_file}.npy".format(npy_file="private_short")))
+
+    check_solution(os.path.join(test_folder, "{npy_file}.npy".format(npy_file="private_long")))
+
     check_solution(os.path.join(test_folder, "{npy_file}.npy".format(npy_file="private_very_long")))
