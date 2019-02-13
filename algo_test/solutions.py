@@ -1,7 +1,7 @@
 
 
 def difference(part1, part2):
-    return abs(max(part1), max(part2))
+    return abs(max(part1) - max(part2))
 
 
 def wrong_trivial_solution(A):
@@ -33,6 +33,8 @@ def exhaustive_solution(A):
     Gets the maximum difference by calculating the difference for all given k values
     """
     differences = []
-    for k in range(0, len(A)-1):
-        differences.append(difference(A[0:k], A[k+1:]))
+    print len(A)
+    for k in range(0, len(A)-1): # k in [0, N-1]
+        differences.append(difference(A[0:k+1], A[k+1:]))
+    return max(differences)
 
