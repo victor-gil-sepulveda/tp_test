@@ -27,10 +27,10 @@ if __name__ == "__main__":
 
     generate_test_arrays(os.path.join(test_folder, "private_very_short"), 500, 2, 15)
 
-    # generate_test_arrays(os.path.join(test_folder, "private_short"), 100, 2, 100)
-    #
-    # generate_test_arrays(os.path.join(test_folder, "private_long"), 50, 1000, 10000)
-    #
-    # generate_test_arrays(os.path.join(test_folder, "private_very_long"), 10, 10000, 100000)
+    generate_test_arrays(os.path.join(test_folder, "private_short"), 100, 2, 100)
+
+    generate_test_arrays(os.path.join(test_folder, "private_long"), 50, 1000, 10000)
+
+    generate_test_arrays(os.path.join(test_folder, "private_very_long"), 10, 10000, 100000)
 
 

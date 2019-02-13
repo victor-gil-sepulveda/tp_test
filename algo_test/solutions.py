@@ -35,6 +35,7 @@ def exhaustive_solution(A):
     differences = []
     for k in range(0, len(A)-1): # k in [0, N-1]
         differences.append(difference(A[0:k+1], A[k+1:]))
+    # print differences
     return max(differences)
 
 
@@ -44,22 +45,28 @@ def target_solution(A):
     O(n) passes
     """
     differences = []
-    print len(A)
+    # print len(A)
     max_p1 = A[0]
     max_p2 = A[-1]
     N = len(A)
-    diff = [0]*N
+    diff = [0]*(N-1)
 
     # O(n)
+    # print A
+
     for k in range(0, N-1): # 0 <= k <= N-2
+        # print "K\' =", k, "K\'\' =", N-2-k
         max_p1 = max(A[k], max_p1)
         max_p2 = max(A[N-1-k], max_p2)
+        # print "max p1", max_p1, "max p2", max_p2
         diff[k] += max_p1
-        diff[N-k] -= max_p2
+        diff[N-2-k] -= max_p2 #N-N-2
+        # print "Differences", diff
 
     # O(n)
-    for i in range(len(differences)):
+    for i in range(len(diff)):
         diff[i] = abs(diff[i])
-
+        # print diff[i], abs(diff[i])
+    # print diff
     # O(n)
     return max(diff)
